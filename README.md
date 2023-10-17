@@ -132,27 +132,9 @@ def go_fast(a):
     return a + trace
 ```
 
-We markup the above with:
-
-```
-@numba.jit(nopython=True)
-def go_fast(a): # function is compiled to machine code when called the first time
-    trace = 0.0
-    # assuming square input matrix
-    for i in range(a.shape[0]):    # numba likes loops
-        trace += np.tanh(a[i, i])  # numba likes numpy functions
-    return a + trace
-```
-
-```
-$ cd python-gpu/numba
-$ cat example_cpu.py
-```
+Using Numba we can speed the code up:
 
 ```python
-import numpy as np
-import numba
-
 @numba.jit(nopython=True)
 def go_fast(a): # function is compiled to machine code when called the first time
     trace = 0.0
@@ -160,16 +142,16 @@ def go_fast(a): # function is compiled to machine code when called the first tim
     for i in range(a.shape[0]):    # numba likes loops
         trace += np.tanh(a[i, i])  # numba likes numpy functions
     return a + trace
-
-x = np.arange(100).reshape(10, 10)
-go_fast(x)
-go_fast(2 * x)
 ```
 
-Run the example above:
+Run the two codes to check the performance difference:
 
-```
-$ sbatch numba_cpu.slurm
+```bash
+$ cd python-gpu/numba
+$ cat cpu_without_numba.py
+$ sbatch cpu_without_numba.slurm
+$ cat cpu_with_numba.py
+$ sbatch cpu_with_numba.slurm
 ```
 
 Let's look at a GPU example. According to the [Numba for GPUs](https://numba.readthedocs.io/en/stable/cuda/overview.html) webpage:
