@@ -124,7 +124,7 @@ Take a look at a sample CPU code:
 ```python
 import numpy as np
 
-def go_fast(a):
+def myfunc(a):
     trace = 0.0
     # assuming square input matrix
     for i in range(a.shape[0]):
@@ -136,7 +136,7 @@ Using Numba we can speed the code up:
 
 ```python
 @numba.jit(nopython=True)
-def go_fast(a): # function is compiled to machine code when called the first time
+def myfunc(a): # function is compiled to machine code when called the first time
     trace = 0.0
     # assuming square input matrix
     for i in range(a.shape[0]):    # numba likes loops
