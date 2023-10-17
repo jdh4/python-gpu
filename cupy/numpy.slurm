@@ -6,8 +6,7 @@
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --mem=8G                 # total memory (RAM) per node
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
-#SBATCH --constraint=a100        # choose gpu80, a100 or v100
-#SBATCH --reservation=fallgpu    # REMOVE THIS LINE AFTER THE WORKSHOP
+#SBATCH --reservation=bootcamp2  # REMOVE THIS LINE AFTER THE WORKSHOP
 
 module purge
 module load anaconda3/2023.9
