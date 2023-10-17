@@ -28,3 +28,4 @@ $ sbatch numpy.slurm
 ```
 
 In the above case we are comparing the CuPy code running on 1 CPU-cores and 1 A100 GPU versus 16 CPU-cores and no GPU. The choice of 16 was found to optimal for the CPU case. What of the two libraries performs faster?
+
