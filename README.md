@@ -112,17 +112,11 @@ See our [JAX knowledge base](https://researchcomputing.princeton.edu/support/kno
 
 # Numba
 
-Numba is 
+[Numba](https://numba.pydata.org/) is an open source JIT compiler that translates a subset of Python and NumPy code into fast machine code.
 
 On compiling Python to machine code:
 
 > When Numba is translating Python to machine code, it uses the LLVM library to do most of the optimization and final code generation. This automatically enables a wide range of optimizations that you don't even have to think about.
-
-According to the [Numba for GPUs](https://numba.readthedocs.io/en/stable/cuda/overview.html) webpage:
-
-> Numba supports CUDA GPU programming by directly compiling a restricted subset of Python code into CUDA kernels and device functions following the CUDA execution model. Kernels written in Numba appear to have direct access to NumPy arrays. NumPy arrays are transferred between the CPU and the GPU automatically.
-
-
 
 Take a look at a sample CPU code:
 
@@ -148,7 +142,17 @@ go_fast(x)
 go_fast(2 * x)
 ```
 
-Let's look at a GPU example:
+Run the example above:
+
+```
+$ sbatch numba_cpu.slurm
+```
+
+Let's look at a GPU example. According to the [Numba for GPUs](https://numba.readthedocs.io/en/stable/cuda/overview.html) webpage:
+
+> Numba supports CUDA GPU programming by directly compiling a restricted subset of Python code into CUDA kernels and device functions following the CUDA execution model. Kernels written in Numba appear to have direct access to NumPy arrays. NumPy arrays are transferred between the CPU and the GPU automatically.
+
+View the Python script:
 
 ```
 $ cat example_gpu.py
@@ -194,6 +198,8 @@ Run the job:
 ```
 $ sbatch numba_gpu.slurm
 ```
+
+Can you use Numba in your work to accelerate Python code on a CPU or GPU?
 
 For more, see [High-Performance Python for GPUs](https://github.com/henryiii/pygpu-minicourse) by Henry Schreiner.
 
