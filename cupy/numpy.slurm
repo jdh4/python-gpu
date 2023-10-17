@@ -12,4 +12,4 @@
 module purge
 module load anaconda3/2023.9
 
-python svd_numpy.py
+python matmul_numpy.py
