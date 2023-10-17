@@ -45,7 +45,7 @@ X = np.random.randn(3000, 3000)
 d = np.linalg.det(X)
 ```
 
-Hint: You only need to change 5 characters.
+Hint: You only need to change 6 characters.
 
 ### CuPy Documentation
 
