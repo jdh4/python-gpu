@@ -64,6 +64,46 @@ Take a look at the [CuPy reference manual](https://docs.cupy.dev/en/stable/refer
 
 ## JAX
 
+<img src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png" alt="logo"></img>
+
+[JAX](https://github.com/google/jax) is [Autograd](https://github.com/hips/autograd) and [XLA](https://www.tensorflow.org/xla), brought
+together for high-performance machine learning research. JAX can be used for:
+
+- automatic differentiation of Python and NumPy functions (more general then TensorFlow)
+- a good choice for non-conventional neural network architectures and loss functions
+- accelerating code using a JIT
+- carrying out computations using multiple GPUs/TPUs
+
+```bash
+$ cd python-gpu/jax
+$ cat example.py
+```
+```python
+import jax.numpy as jnp
+from jax import grad, jit, vmap
+
+def predict(params, inputs):
+  for W, b in params:
+    outputs = jnp.dot(inputs, W) + b
+    inputs = jnp.tanh(outputs)  # inputs to the next layer
+  return outputs                # no activation on last layer
+
+def loss(params, inputs, targets):
+  preds = predict(params, inputs)
+  return jnp.sum((preds - targets)**2)
+
+grad_loss = jit(grad(loss))  # compiled gradient evaluation function
+perex_grads = jit(vmap(grad_loss, in_axes=(None, 0, 0)))  # fast per-example grads
+```
+
+Run the code with:
+
+```
+$ sbatch submit.sh
+```
+
+Take a look at all of the [JAX examples](https://github.com/google/jax). You can run any of the examples by modifying example.py with the example you want to run.
+
 
 ## PyTorch and TensorFlow
 
