@@ -214,3 +214,7 @@ See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_prog
 # MATLAB, Julia and R
 
 See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for GPU examples in other languages.
+
+# GPU math libraries for C++ and Fortran
+
+See `05_cuda_libraries` of the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo.
