@@ -209,6 +209,12 @@ Can you use Numba in your work to accelerate Python code on a CPU or GPU?
 
 For more, see [High-Performance Python for GPUs](https://github.com/henryiii/pygpu-minicourse) by Henry Schreiner.
 
+One can install Numba for GPUs with:
+
+```
+$ conda create --name numba-env numba cudatoolkit
+```
+
 # Rapids
 
 Be aware of the [Rapids](https://rapids.ai/) GPU libraries by NVIDIA for analytics and machine learning using conventional models. Rapids is something like pandas, Scikit-learn and NetworkX (and more) running on GPUs.
