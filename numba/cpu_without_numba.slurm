@@ -9,6 +9,6 @@
 
 module purge
 module load anaconda3/2023.9
-conda activate numba-env
+conda activate /scratch/network/jdh4/.gpu_workshop/envs/numba-env
 
 python cpu_without_numba.py
