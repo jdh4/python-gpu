@@ -1,5 +1,17 @@
 # CuPy and Python GPU Libraries
 
+## Obtain the files
+
+Run the commands below to get started:
+
+```bash
+$ ssh <YourNetID>@adroit.princeton.edu
+$ cd /scratch/network/$USER
+$ git clone https://github.com/jdh4/python-gpu.git
+$ cd python-git
+$ ls -l
+```
+
 ## CuPy is a drop-in replacement for NumPy and SciPy
 
 NumPy (for CPUs)
