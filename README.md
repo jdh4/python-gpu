@@ -56,9 +56,10 @@ The code below calculates the [singular value decomposition](https://en.wikipedi
 import numpy as np
 X = np.random.randn(5000, 5000)
 u, s, v = np.linalg.svd(X)
+print(f"s.sum() = {s.sum()}")
 ```
 
-Hint: You only need to change 6 characters.
+Hint: You only need to change at most 6 characters.
 
 ### CuPy Documentation
 
