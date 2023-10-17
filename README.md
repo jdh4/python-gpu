@@ -76,6 +76,8 @@ together for high-performance machine learning research. JAX can be used for:
 - accelerating code using a JIT
 - carrying out computations using multiple GPUs/TPUs
 
+Take a look at an example from the JAX GitHub page:
+
 ```bash
 $ cd python-gpu/jax
 $ cat example.py
@@ -114,7 +116,7 @@ See our [JAX knowledge base](https://researchcomputing.princeton.edu/support/kno
 
 ## PyTorch and TensorFlow
 
-See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for PyTorch and TensorFlow examples. For installation directions and more see the [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) knowledge base pages.
+See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for PyTorch and TensorFlow examples. For installation directions and more, see our [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) knowledge base pages.
 
 ## MATLAB, Julia and R
 
