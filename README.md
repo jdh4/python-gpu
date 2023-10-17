@@ -205,6 +205,8 @@ For more, see [High-Performance Python for GPUs](https://github.com/henryiii/pyg
 
 # Rapids
 
+Be aware of the [Rapids](https://rapids.ai/) GPU libraries by NVIDIA for analytics and machine learning using conventional models. Rapids is something like pandas, Scikit-learn and NetworkX (and more) running on GPUs.
+
 # PyTorch and TensorFlow
 
 See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for PyTorch and TensorFlow examples. For installation directions and more, see our [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) knowledge base pages.
