@@ -11,4 +11,4 @@ module purge
 module load anaconda3/2023.9
 conda activate numba-env
 
-python numba_cpu.py
+python cpu_with_numba.py
