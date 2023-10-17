@@ -42,7 +42,7 @@ The code below calculates the [singular value decomposition](https://en.wikipedi
 ```
 import numpy as np
 X = np.random.randn(5000, 5000)
-d = np.linalg.svd(X)
+u, s, v = np.linalg.svd(X)
 ```
 
 Hint: You only need to change 6 characters.
