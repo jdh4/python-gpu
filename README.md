@@ -114,10 +114,10 @@ See our [JAX knowledge base](https://researchcomputing.princeton.edu/support/kno
 
 # Rapids
 
-## PyTorch and TensorFlow
+# PyTorch and TensorFlow
 
 See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for PyTorch and TensorFlow examples. For installation directions and more, see our [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) knowledge base pages.
 
-## MATLAB, Julia and R
+# MATLAB, Julia and R
 
 See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for GPU examples in other languages.
