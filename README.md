@@ -62,7 +62,7 @@ Hint: You only need to change 6 characters.
 
 ### CuPy Documentation
 
-Take a look at the [CuPy reference manual](https://docs.cupy.dev/en/stable/reference/index.html). Could you use CuPy to speed-up your research?
+Take a look at the [CuPy reference manual](https://docs.cupy.dev/en/stable/reference/index.html). Can you use CuPy in your research?
 
 # JAX
 
@@ -111,6 +111,91 @@ Take a look at all of the [JAX examples](https://github.com/google/jax). You can
 See our [JAX knowledge base](https://researchcomputing.princeton.edu/support/knowledge-base/jax) page for installation directions.
 
 # Numba
+
+Numba is 
+
+On compiling Python to machine code:
+
+> When Numba is translating Python to machine code, it uses the LLVM library to do most of the optimization and final code generation. This automatically enables a wide range of optimizations that you don't even have to think about.
+
+According to the [Numba for GPUs](https://numba.readthedocs.io/en/stable/cuda/overview.html) webpage:
+
+> Numba supports CUDA GPU programming by directly compiling a restricted subset of Python code into CUDA kernels and device functions following the CUDA execution model. Kernels written in Numba appear to have direct access to NumPy arrays. NumPy arrays are transferred between the CPU and the GPU automatically.
+
+
+
+Take a look at a sample CPU code:
+
+```
+$ cd python-gpu/numba
+$ cat example_cpu.py
+```
+
+```python
+import numpy as np
+import numba
+
+@numba.jit(nopython=True)
+def go_fast(a): # function is compiled to machine code when called the first time
+    trace = 0.0
+    # assuming square input matrix
+    for i in range(a.shape[0]):    # numba likes loops
+        trace += np.tanh(a[i, i])  # numba likes numpy functions
+    return a + trace
+
+x = np.arange(100).reshape(10, 10)
+go_fast(x)
+go_fast(2 * x)
+```
+
+Let's look at a GPU example:
+
+```
+$ cat example_gpu.py
+```
+```python
+import numpy as np
+from numba import cuda
+
+@cuda.jit
+def my_kernel(io_array):
+    # thread id in a 1D block
+    tx = cuda.threadIdx.x
+    # block id in a 1D grid
+    ty = cuda.blockIdx.x
+    # block width, i.e. number of threads per block
+    bw = cuda.blockDim.x
+    # compute flattened index inside the array
+    pos = tx + ty * bw
+    if pos < io_array.size:  # check array boundaries
+        io_array[pos] *= 2
+
+if __name__ == "__main__":
+
+    # create the data array - usually initialized some other way
+    data = np.ones(100000)
+
+    # set the number of threads in a block
+    threadsperblock = 256
+
+    # calculate the number of thread blocks in the grid
+    blockspergrid = (data.size + (threadsperblock - 1)) // threadsperblock
+
+    # call the kernel
+    my_kernel[blockspergrid, threadsperblock](data)
+
+    # print the result
+    print(data[:3])
+    print(data[-3:])
+```
+
+Run the job:
+
+```
+$ sbatch numba_gpu.slurm
+```
+
+For more, see [High-Performance Python for GPUs](https://github.com/henryiii/pygpu-minicourse) by Henry Schreiner.
 
 # Rapids
 
