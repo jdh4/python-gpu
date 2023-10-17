@@ -13,7 +13,7 @@ $ cd python-gpu
 
 ## CuPy is a drop-in replacement for NumPy and SciPy
 
-<img src="https://github.com/kmaehashi/cupy" alt="logo"></img>
+<img src="https://raw.githubusercontent.com/cupy/cupy/main/docs/image/cupy_logo_1000px.png" alt="logo"></img>
 
 NumPy (for CPUs)
 
