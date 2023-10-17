@@ -6,24 +6,24 @@ NumPy (for CPUs)
 
 ```python
 import np as np
-X = np.random.randn(3000, 3000)
-u, s, v = np.linalg.svd(X)
+X = np.random.randn(10000, 10000)
+Y = np.matmul(X, X)
 ```
 
 [CuPy](https://docs.cupy.dev/en/stable/index.html) (for GPUs)
 
 ```python
 import cupy as cp
-X = cp.random.randn(3000, 3000)
-u, s, v = cp.linalg.svd(X)
+X = cp.random.randn(10000, 10000)
+Y = cp.matmul(X, X)
 ```
 
 Let's compare the performance of the two.
 
 ```
 $ cd python-gpu/cupy
-$ cat svd_numpy.py
-$ cat svd_cupy.py
+$ cat matmul_numpy.py
+$ cat matmul_cupy.py
 ```
 
 The difference between the two scripts are minimal as expected. Run the jobs and compare the timings:
@@ -37,12 +37,12 @@ In the above case we are comparing the CuPy code running on 1 CPU-cores and 1 A1
 
 ### Exercise
 
-The code below calculates the determinant of a matrix `X` using NumPy. Convert the code to CuPy and run it.
+The code below calculates the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition) of a matrix using NumPy. Convert the code to CuPy and run it.
 
 ```
 import numpy as np
-X = np.random.randn(3000, 3000)
-d = np.linalg.det(X)
+X = np.random.randn(5000, 5000)
+d = np.linalg.svd(X)
 ```
 
 Hint: You only need to change 6 characters.
