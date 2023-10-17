@@ -11,7 +11,7 @@ $ git clone https://github.com/jdh4/python-gpu.git
 $ cd python-gpu
 ```
 
-## CuPy is a drop-in replacement for NumPy and SciPy
+# CuPy is a drop-in replacement for NumPy and SciPy
 
 <img src="https://raw.githubusercontent.com/cupy/cupy/main/docs/image/cupy_logo_1000px.png" alt="logo" width="300"></img>
 
@@ -64,7 +64,7 @@ Hint: You only need to change 6 characters.
 
 Take a look at the [CuPy reference manual](https://docs.cupy.dev/en/stable/reference/index.html). Could you use CuPy to speed-up your research?
 
-## JAX
+# JAX
 
 <img src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png" alt="logo"></img>
 
@@ -106,16 +106,15 @@ $ sbatch submit.sh
 
 Take a look at all of the [JAX examples](https://github.com/google/jax). You can run any of the examples by modifying example.py with the example you want to run.
 
-See our [JAX knowledgebase](https://researchcomputing.princeton.edu/support/knowledge-base/jax) page for installation directions.
+See our [JAX knowledge base](https://researchcomputing.princeton.edu/support/knowledge-base/jax) page for installation directions.
+
+# Numba
+
+# Rapids
 
 ## PyTorch and TensorFlow
 
-
-## Rapids
-
-
-## Numba
-
+See the [Intro to GPU Computing](https://github.com/PrincetonUniversity/gpu_programming_intro) repo for PyTorch and TensorFlow examples. For installation directions and more see the [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) knowledge base pages.
 
 ## MATLAB, Julia and R
 
