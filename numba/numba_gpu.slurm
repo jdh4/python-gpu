@@ -13,4 +13,4 @@ module purge
 module load anaconda3/2023.9
 conda activate /scratch/network/jdh4/.gpu_workshop/envs/numba-env
 
-python numba_gpu.py
+python example_gpu.py
