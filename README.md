@@ -29,7 +29,7 @@ X = cp.random.randn(10000, 10000)
 Y = cp.matmul(X, X)
 ```
 
-Let's compare the performance of the two.
+Let's compare the performance of the two. Inspect the two Python scripts:
 
 ```
 $ cd python-gpu/cupy
@@ -37,20 +37,20 @@ $ cat matmul_numpy.py
 $ cat matmul_cupy.py
 ```
 
-The difference between the two scripts are minimal as expected. Run the jobs and compare the timings:
+The difference between the two scripts is minimal as expected. Run the jobs and compare the timings:
 
 ```
 $ sbatch cupy.slurm
 $ sbatch numpy.slurm
 ```
 
-In the above case we are comparing the CuPy code running on 1 CPU-cores and 1 A100 GPU versus 8 CPU-cores and no GPU. Which of the two libraries performs faster for this problem?
+In the above case we are comparing the CuPy code running on 1 CPU-core and 1 A100 GPU versus NumPy code running on 8 CPU-cores and no GPU. Which of the two libraries performs faster for this problem?
 
 ### Exercise
 
 The code below calculates the [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition) of a matrix using NumPy. Convert the code to CuPy and run it.
 
-```
+```python
 import numpy as np
 X = np.random.randn(5000, 5000)
 u, s, v = np.linalg.svd(X)
