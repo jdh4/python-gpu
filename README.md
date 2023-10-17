@@ -121,6 +121,29 @@ On compiling Python to machine code:
 
 Take a look at a sample CPU code:
 
+```python
+import numpy as np
+
+def go_fast(a):
+    trace = 0.0
+    # assuming square input matrix
+    for i in range(a.shape[0]):
+        trace += np.tanh(a[i, i])
+    return a + trace
+```
+
+We markup the above with:
+
+```
+@numba.jit(nopython=True)
+def go_fast(a): # function is compiled to machine code when called the first time
+    trace = 0.0
+    # assuming square input matrix
+    for i in range(a.shape[0]):    # numba likes loops
+        trace += np.tanh(a[i, i])  # numba likes numpy functions
+    return a + trace
+```
+
 ```
 $ cd python-gpu/numba
 $ cat example_cpu.py
