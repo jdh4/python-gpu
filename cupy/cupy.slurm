@@ -13,5 +13,4 @@ module purge
 module load anaconda3/2024.6
 conda activate /scratch/network/jdh4/.gpu_workshop/envs/cupy-env
 
-python matmul_numpy.py
 python matmul_cupy.py
